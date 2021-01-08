@@ -27,11 +27,15 @@ public class ReturnOptionalPlugin extends PluginAdapter {
 
         returnType.ifPresent(t -> {
 
-            method.setReturnType(
-                    new FullyQualifiedJavaType(
-                            "java.util.Optional<"
-                                    + t.getFullyQualifiedName()
-                                    + ">"));
+            String typeName = "Optional<"
+                    + t.getFullyQualifiedName()
+                    + ">";
+
+            method.setReturnType(new FullyQualifiedJavaType(typeName));
+
+            String fullTypeName = "java.util." + typeName;
+
+            interfaze.addImportedType(new FullyQualifiedJavaType(fullTypeName));
         });
 
         return true;
