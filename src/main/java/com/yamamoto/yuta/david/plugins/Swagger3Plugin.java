@@ -26,7 +26,7 @@ public class Swagger3Plugin extends PluginAdapter {
 
         topLevelClass.addImportedType("io.swagger.v3.oas.annotations.media.Schema");
 
-        field.addAnnotation("@Schema(required = true)");
+        field.addAnnotation("@Schema(required = true, nullable = true)");
 
         return true;
     }
