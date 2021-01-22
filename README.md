@@ -2,7 +2,7 @@
 
 ## 概要
 
-MyBatis Generatorに、独自のプラグインを適用したものです。
+[David](https://github.com/y-chip/david)を参照してください。
 
 ## ビルド
 
